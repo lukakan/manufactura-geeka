@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="001-init-testdata" author="lukakani" context="dev">
+
+        <insert tableName="product">
+            <column name="id" value="1"/>
+            <column name="name" value="We are all stories in the end"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „We are all stories in the end” pachnąca kokosem, aloesem i poranną rosą zabierze Cię we wspaniałą podróż po czasie i przestrzeni, gdzie wszystko jest możliwe" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-12"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" value="2"/>
+            <column name="name" value="May Queen"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „May Queen” otoczy Cię zapachem kwiatów – jaśminu, frezji i gardenii. Dzięki temu poczujesz się, jakby był środek lata, niezależnie od pory roku panującej za oknem. A cóż może być piękniejszego od wakacji? ⛱ (Oczywiście o ile gospodarze akurat nie postanowią złożyć Cię w rytualnej ofierze z okazji Midsommar.)" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-13"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="1"/>
+            <column name="name" value="Serial"/>
+            <column name="product_id" value="1"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="2"/>
+            <column name="name" value="Film"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="1"/>
+            <column name="url" value="https://tinyurl.com/pmjtufwp"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="2"/>
+            <column name="url" value="https://tinyurl.com/4uvrdpr6"/>
+            <column name="product_id" value="1"/>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>
