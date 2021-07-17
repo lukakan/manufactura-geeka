@@ -3,7 +3,7 @@ package pl.manufakturageeka.shop.domain.home;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import pl.manufakturageeka.shop.domain.product.Product;
+import pl.manufakturageeka.shop.domain.product.ProductDto;
 import pl.manufakturageeka.shop.domain.product.ProductService;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String homePage(Model model) {
-        List<Product> products = productService.findAll();
+        List<ProductDto> products = productService.findByOrderByAddDate();
         model.addAttribute("products", products);
         return "home";
     }

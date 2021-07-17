@@ -28,6 +28,28 @@
             <column name="add_date" value="2021-07-13"/>
         </insert>
 
+        <insert tableName="product">
+            <column name="id" value="3"/>
+            <column name="name" value="Hanibal"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „When Hannibal have fun, people die” przeniesie Cię w świat wykwintnej kuchni, jaką z pewnością oferował swoim gościom Hannibal 🔪. Zapach granatu, gruszki, figi i różanego wina sprawi, że nawet najzwyklejszy posiłek może przemienić się w prawdziwą ucztę" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-15"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" value="4"/>
+            <column name="name" value="God of Mischief"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Zapach świecy „God of Mischief” jest złożony i intrygujący jak sam bóg psot – Loki ✨. Piżmo, jaśmin, cytryna i drzewo sandałowe tworzą kompleksowe połączenie, dając efekt radosny, figlarny, ale równocześnie trochę mroczny 🖤. " />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-15"/>
+        </insert>
+
         <insert tableName="tag">
             <column name="id" value="1"/>
             <column name="name" value="Serial"/>
@@ -36,20 +58,45 @@
 
         <insert tableName="tag">
             <column name="id" value="2"/>
+            <column name="name" value="Serial"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="3"/>
             <column name="name" value="Film"/>
             <column name="product_id" value="2"/>
         </insert>
 
+        <insert tableName="tag">
+            <column name="id" value="4"/>
+            <column name="name" value="Film"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+
         <insert tableName="picture">
             <column name="id" value="1"/>
-            <column name="url" value="https://tinyurl.com/pmjtufwp"/>
-            <column name="product_id" value="2"/>
+            <column name="url" value="pictures/1.png"/>
+            <column name="product_id" value="1"/>
         </insert>
 
         <insert tableName="picture">
             <column name="id" value="2"/>
-            <column name="url" value="https://tinyurl.com/4uvrdpr6"/>
-            <column name="product_id" value="1"/>
+            <column name="url" value="pictures/2.png"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="3"/>
+            <column name="url" value="pictures/3.png"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="4"/>
+            <column name="url" value="pictures/4.png"/>
+            <column name="product_id" value="4"/>
         </insert>
 
     </changeSet>

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService {
@@ -14,7 +15,12 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<ProductDto> findByOrderByAddDate() {
+        List<Product> products = productRepository.findTop3ByOrderByAddDate();
+        return products.stream().map(this::toDto).collect(Collectors.toList());
+    }
+
+    public ProductDto toDto(Product product) {
+        return new ProductDto(product);
     }
 }
