@@ -131,6 +131,21 @@ nav {
     height: auto;
 }
 
+.product-link {
+    text-decoration: none;
+    color: #FFCF00;
+    font-weight: bolder;
+}
+
+.product-link:hover{
+    color: red;
+}
+
+.product-picture-detail{
+    width: 100%;
+    height: auto;
+}
+
 /**************************************************/
 /* FOOTER */
 

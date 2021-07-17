@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style/main.css}">
+    <title>Manufaktura geek</title>
+</head>
+<body>
+
+<main class="content" layout:fragment="content">
+    <div class="container">
+        <h1 th:text="${product.name}">Name</h1>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <img th:src="@{|/${product.picture}|}" class="product-picture-detail">
+            </div>
+            <div class="col-6">
+                <p th:text="${product.description}"></p>
+                <p th:text="|Cena: ${product.price} pln|"></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
