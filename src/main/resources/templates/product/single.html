@@ -14,7 +14,26 @@
         <hr>
         <div class="row">
             <div class="col-6">
-                <img th:src="@{|/${product.picture}|}" class="product-picture-detail">
+                <div th:if="${product.picturesUrl.size() == 1}">
+                    <img th:src="@{|/${product.picturesUrl.get(0)}|}" class="product-picture-detail">
+                </div>
+                <div th:unless="${product.picturesUrl.size() == 1}">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div data-bs-interval="2000" th:each="photo, iterstat :${product.picturesUrl}" th:class="${iterstat.index}== 0  ? 'carousel-item':'carousel-item active'">
+                                <img th:src="@{|/${photo}|}" class="d-block w-100" alt="Next picture">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="col-6">
                 <p th:text="${product.description}"></p>
