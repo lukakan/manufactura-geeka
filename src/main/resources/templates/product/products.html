@@ -16,7 +16,7 @@
             <div class="row">
                 <li th:each="product:${products}" th:object="${product}" class="col-12 col-md-6 col-lg-4 product">
                     <h5 th:text="*{name}"></h5>
-                    <img th:src="*{picture}" class="product-picture">
+                    <img th:src="*{picturesUrl.get(0)}" class="product-picture">
                     <p class="mt-3" th:text="*{description}"></p>
                     <p th:text="|Cena: *{price} pln|"></p>
                     <a class="product-link" th:href="@{|/produkty/*{id}|}">Więcej</a>

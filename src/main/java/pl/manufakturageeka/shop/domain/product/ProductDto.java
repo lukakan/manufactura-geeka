@@ -7,7 +7,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -19,7 +21,7 @@ public class ProductDto {
     private Set<Tag> tags;
     private Status status;
     private String description;
-    private String picture;
+    private List<String> picturesUrl;
     private LocalDate addDate;
 
     public ProductDto(Product product) {
@@ -29,7 +31,7 @@ public class ProductDto {
         this.tags = product.getTags();
         this.status = product.getStatus();
         this.description = product.getDescription();
-        this.picture = product.getPictures().get(0).getUrl();
+        this.picturesUrl = product.getPictures().stream().map(Picture::getUrl).collect(Collectors.toList());
         this.addDate = product.getAddDate();
     }
 

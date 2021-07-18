@@ -77,25 +77,31 @@
 
         <insert tableName="picture">
             <column name="id" value="1"/>
-            <column name="url" value="pictures/1.png"/>
+            <column name="url" value="pictures/product/1/1.png"/>
             <column name="product_id" value="1"/>
         </insert>
 
         <insert tableName="picture">
             <column name="id" value="2"/>
-            <column name="url" value="pictures/2.png"/>
-            <column name="product_id" value="2"/>
+            <column name="url" value="pictures/product/1/2.png"/>
+            <column name="product_id" value="1"/>
         </insert>
 
         <insert tableName="picture">
             <column name="id" value="3"/>
-            <column name="url" value="pictures/3.png"/>
-            <column name="product_id" value="3"/>
+            <column name="url" value="pictures/product/2/1.png"/>
+            <column name="product_id" value="2"/>
         </insert>
 
         <insert tableName="picture">
             <column name="id" value="4"/>
-            <column name="url" value="pictures/4.png"/>
+            <column name="url" value="pictures/product/3/1.png"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="5"/>
+            <column name="url" value="pictures/product/4/1.png"/>
             <column name="product_id" value="4"/>
         </insert>
 
