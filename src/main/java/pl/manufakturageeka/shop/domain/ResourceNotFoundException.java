@@ -1,3 +1,3 @@
-package pl.manufakturageeka.shop.domain.config;
+package pl.manufakturageeka.shop.domain;
 
 public class ResourceNotFoundException extends RuntimeException {}

@@ -2,7 +2,8 @@ package pl.manufakturageeka.shop.domain.product;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.manufakturageeka.shop.domain.config.ResourceNotFoundException;
+import pl.manufakturageeka.shop.domain.ResourceNotFoundException;
+
 
 import java.util.List;
 import java.util.Optional;
