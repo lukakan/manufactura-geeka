@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="001-init-testdata" author="lukakani" context="dev">
+
+        <insert tableName="product">
+            <column name="id" value="1"/>
+            <column name="name" value="We are all stories in the end"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „We are all stories in the end” pachnąca kokosem, aloesem i poranną rosą zabierze Cię we wspaniałą podróż po czasie i przestrzeni, gdzie wszystko jest możliwe" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-12"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" value="2"/>
+            <column name="name" value="May Queen"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „May Queen” otoczy Cię zapachem kwiatów – jaśminu, frezji i gardenii. Dzięki temu poczujesz się, jakby był środek lata, niezależnie od pory roku panującej za oknem. A cóż może być piękniejszego od wakacji? ⛱ (Oczywiście o ile gospodarze akurat nie postanowią złożyć Cię w rytualnej ofierze z okazji Midsommar.)" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-13"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" value="3"/>
+            <column name="name" value="Hanibal"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Świeca „When Hannibal have fun, people die” przeniesie Cię w świat wykwintnej kuchni, jaką z pewnością oferował swoim gościom Hannibal 🔪. Zapach granatu, gruszki, figi i różanego wina sprawi, że nawet najzwyklejszy posiłek może przemienić się w prawdziwą ucztę" />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-15"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="id" value="4"/>
+            <column name="name" value="God of Mischief"/>
+            <column name="price" value="24.99"/>
+            <column name="description"
+                    value="Zapach świecy „God of Mischief” jest złożony i intrygujący jak sam bóg psot – Loki ✨. Piżmo, jaśmin, cytryna i drzewo sandałowe tworzą kompleksowe połączenie, dając efekt radosny, figlarny, ale równocześnie trochę mroczny 🖤. " />
+            <column name="status"
+                    value="AVAILABLE" />
+            <column name="add_date" value="2021-07-15"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="1"/>
+            <column name="name" value="Serial"/>
+            <column name="product_id" value="1"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="2"/>
+            <column name="name" value="Serial"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="3"/>
+            <column name="name" value="Film"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <insert tableName="tag">
+            <column name="id" value="4"/>
+            <column name="name" value="Film"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+
+        <insert tableName="picture">
+            <column name="id" value="1"/>
+            <column name="url" value="pictures/1.png"/>
+            <column name="product_id" value="1"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="2"/>
+            <column name="url" value="pictures/2.png"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="3"/>
+            <column name="url" value="pictures/3.png"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <insert tableName="picture">
+            <column name="id" value="4"/>
+            <column name="url" value="pictures/4.png"/>
+            <column name="product_id" value="4"/>
+        </insert>
+
+    </changeSet>
+
+
+</databaseChangeLog>
