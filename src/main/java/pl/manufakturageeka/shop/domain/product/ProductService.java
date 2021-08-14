@@ -18,7 +18,7 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<ProductDto> findByOrderByAddDate() {
+    public List<ProductDto> findRecentlyAdded() {
         List<Product> products = productRepository.findTop3ByOrderByAddDate();
         return products.stream().map(this::toDto).collect(Collectors.toList());
     }

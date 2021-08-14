@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/style/main.css}">
+    <title>Manufaktura geek</title>
+</head>
+<body>
+
+<main class="content" layout:fragment="content">
+    <div class="container">
+        <h1>Produkty - admin</h1>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa</th>
+                    <th>Zdjęcie</th>
+                    <th>Cena</th>
+                    <th>Dostępnośc</th>
+                    <th>Opis</th>
+                    <th>Edycja</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product:${products}" th:object="${product}">
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{name}"></td>
+                    <td><img th:src="@{|/${product.picturesUrl.get(0)}|}" class="img-thumbnail"></td>
+                    <td th:text="*{price}"></td>
+                    <td th:text="*{status}"></td>
+                    <td th:text="*{description}"></td>
+                    <td><a th:href="@{|amdin/produkty/*{id}/edycja|}">Edytuj</a></td>
+                    <td><a th:href="@{|amdin/produkty/*{id}/usun|}">Usuń</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>
